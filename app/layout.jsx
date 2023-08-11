@@ -14,7 +14,7 @@ const Root = ({children}) => {
     <html lang="en">
         <body> 
             <Provider> 
-            <div clasName="main">
+            <div>
                 <div className="gradient"/>
             </div>
             

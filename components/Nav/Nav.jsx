@@ -8,19 +8,19 @@ import{ useState, useEffect } from 'react';
 import{ signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
 const Nav = () => {
-  const isUserLoggedIn = true;
+  const { data: session } = useSession();
 
-  const [providers, setProviders] = useState(0)
+  const [providers, setProviders] = useState(null)
   const [Dropdown, setDropdown] = useState(false);
 
   useEffect(() =>{
-    const setProviders = async () =>{
+    const setUpProviders = async () =>{
       const response = await getProviders();
 
       setProviders(response);
     }
 
-    setProviders()
+    setUpProviders()
   },[])
 
   return (
@@ -34,9 +34,10 @@ const Nav = () => {
         />
         <p className={styles.hide_desktop}>K-agency</p>
       </Link>
+
       {/* desktop */}
       <div className={styles.hide_desktop}>
-        {isUserLoggedIn ? (
+        {false ? (
           <div>
             <Link href="/create-prompt">
               Create blog
@@ -75,7 +76,7 @@ const Nav = () => {
 
       {/* mobile */}
       <div className={`${styles.hide_mobile} ${styles.logo_text}`}>
-        {isUserLoggedIn ?(
+        {session?.user ?(
           <div>
               <Image 
                 src="/assets/images/Sample_User_Icon.png"
