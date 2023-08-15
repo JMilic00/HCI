@@ -21,13 +21,14 @@ const Nav = () => {
     }
 
     setUpProviders()
+    
   },[])
 
   return (
     <nav className={styles.flex_nav}>
       <Link href="/" className={styles.link}>
         <Image 
-        src="/assets/images/FESB.jpg"
+        src="/assets/images/Sample_User_Icon.png"
         alt="logo"
         width={30}
         height={30}
@@ -35,9 +36,10 @@ const Nav = () => {
         <p className={styles.hide_desktop}>K-agency</p>
       </Link>
 
+
       {/* desktop */}
       <div className={styles.hide_desktop}>
-        {false ? (
+        {session?.user ? (
           <div>
             <Link href="/create-prompt">
               Create blog
@@ -48,7 +50,7 @@ const Nav = () => {
             </button>
             <Link href="/profile">
               <Image 
-                src="/assets/images/Sample_User_Icon.png"
+                src={session?.user.image}
                 alt="logo"
                 width={30}
                 height={30}
@@ -79,7 +81,7 @@ const Nav = () => {
         {session?.user ?(
           <div>
               <Image 
-                src="/assets/images/Sample_User_Icon.png"
+                src={session?.user.image}
                 alt="logo"
                 width={30}
                 height={30}
@@ -131,8 +133,6 @@ const Nav = () => {
       </>
       }
       </div>
-
-
     </nav>
   )
 }
