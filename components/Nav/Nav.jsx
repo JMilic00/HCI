@@ -41,7 +41,7 @@ const Nav = () => {
       <div className={styles.hide_desktop}>
         {session?.user ? (
           <div>
-            <Link href="/create-prompt">
+            <Link href="/create-blog">
               Create blog
             </Link>
 
@@ -100,10 +100,10 @@ const Nav = () => {
                       My profile
                     </Link>
                     <Link
-                    href="/create-prompt"
+                    href="/create-blog"
                     onClick={()=>setDropdown(false)}
                     >
-                      Create Prompt
+                      Create Blog
                     </Link>
                     <button
                       type="button"
