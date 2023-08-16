@@ -8,6 +8,10 @@ import { usePathname, useRouter } from 'next/navigation';
 
 const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
  
+  const { data: session } = useSession();
+  const pathName = usePathname();
+  const router = useRouter();
+
   const [copied, setCopied] = useState("");
 
   const handleCopy = () => {
@@ -45,8 +49,20 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
       </div>
       <p>{post.blog}</p>
       <p onClick={() => handleTagClick && handleTagClick(post.tag)}>
-        {post.tag}
+        #{post.tag}
       </p>
+
+      {session?.user.id === post.creator._id && pathName === '/profile'
+       &&(
+        <div>
+          <p onClick={handleEdit}>
+            Edit
+          </p>
+          <p onClick={handleDelete}>
+            Delete
+        </p>
+        </div>
+       )}
     </div>
   )
 }
