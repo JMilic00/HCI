@@ -4,6 +4,10 @@ import {useState} from 'react';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
+import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
+import styles from './BlogCard.module.css'
+import Link from 'next/link';
 
 
 const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
@@ -20,9 +24,10 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
     setTimeout(() => setCopied(""),3000);
   }
   return (
-    <div>
+    <Grid padding={3} item xs={12} sm={6} md={4} lg={3} className={styles.grid_item}>
+      <Card>
       <div>
-        <div>
+        <div className={styles.header}>
           <Image
             src={post.creator.image}
             alt="user_image"
@@ -47,10 +52,19 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
         />
         </div>
       </div>
-      <p>{post.blog}</p>
+     <Link href={{
+        pathname: "/blog",
+        query: {
+          paragraph: post.blog,
+          title: post.tag, 
+        },
+      }}
+      > 
+      <p className={styles.paragraph}>{post.blog}</p>
       <p onClick={() => handleTagClick && handleTagClick(post.tag)}>
         #{post.tag}
       </p>
+      </Link> 
 
       {session?.user.id === post.creator._id && pathName === '/profile'
        &&(
@@ -63,7 +77,8 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
         </p>
         </div>
        )}
-    </div>
+       </Card>
+    </Grid>
   )
 }
 

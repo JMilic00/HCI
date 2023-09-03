@@ -7,6 +7,8 @@ import Image from 'next/image';
 import{ useState, useEffect } from 'react';
 import{ signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
+import Button from "@mui/material/Button"
+
 const Nav = () => {
   const { data: session } = useSession();
 
@@ -35,6 +37,9 @@ const Nav = () => {
         />
         <p className={styles.hide_desktop}>K-agency</p>
       </Link>
+      <Link href="/blogs">
+        <p>blogs</p>
+      </Link>
 
 
       {/* desktop */}
@@ -45,9 +50,9 @@ const Nav = () => {
               Create blog
             </Link>
 
-            <button type="button" onClick={signOut} className="outline_btn">
+            <Button color="success"onClick={signOut} className="outline_btn">
               Sign Out
-            </button>
+            </Button>
             <Link href="/profile">
               <Image 
                 src={session?.user.image}
@@ -61,13 +66,14 @@ const Nav = () => {
         <>
           {providers &&
             Object.values(providers).map((provider) => (
-              <button
-                type="button"
+              <Button
+              variant="contained" 
+              color="success"
                 key={provider.name}
                 onClick={() => signIn(provider.id)}
               >
                 Sing In
-              </button>
+              </Button>
             )
             )
           }

@@ -3,11 +3,7 @@ import Feed from '@components/Feed/Feed'
 const Home = () => {
   return (
     <section>
-        <h1>
-          discover & 
-          <br/>
-          <span>Turist Blog Heaven</span>
-        </h1>
+          <span> discover & Turist Blog Heaven</span>
         <p>
           asdfasfdedfjadfjlasd;jfkl;ajvlkajnhdf
           ajdkhfjkasdhjfklajfkljdsjf;asdjfl;asdfasfdedfjadfjlasdadf

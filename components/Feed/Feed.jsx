@@ -4,9 +4,13 @@ import { useState, useEffect } from 'react'
 
 import BlogCard from '../BlogCard/BlogCard'
 
+import Grid from '@mui/material/Grid'
+import TextField from '@mui/material/TextField'
+import styles from './Feed.module.css'
+
 const BlogCardList = ({ data, handleTagClick }) => {
   return (
-    <div>
+    <Grid container sx={styles.grid_layout}>
       {data.map((post) => (
         <BlogCard
           key={post._id}
@@ -14,17 +18,16 @@ const BlogCardList = ({ data, handleTagClick }) => {
           handleTagClick={handleTagClick}
         />
       ))}
-    </div>
+    </Grid>
   )
 }
 
 const Feed = () => {
   const [searchText, setSearchText]= useState('');
+  const [searchTimeout, setSearchTimeout] = useState(null);
+  const [searchedResults, setSearchedResults] = useState([]);
+
   const [posts, setPosts] = useState([]);
-
-  const handleSearchChange = (e) => {
-
-  }
 
   useEffect(()=>{
     const fetchPost = async () => {
@@ -37,6 +40,28 @@ const Feed = () => {
     fetchPost();
   },[])
 
+  const handleSearchChange = (e) => {
+    clearTimeout(searchTimeout);
+    setSearchText(e.target.value);
+
+    // debounce method
+    setSearchTimeout(
+      setTimeout(() => {
+        const searchResult = filterPrompts(e.target.value);
+        setSearchedResults(searchResult);
+      }, 500)
+    );
+  };
+
+  const filterPrompts = (searchtext) => {
+    const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    return posts.filter(
+      (item) =>
+        regex.test(item.creator.username) ||
+        regex.test(item.tag) ||
+        regex.test(item.blog)
+    );
+  };
   return (
     <section>
       <form>
@@ -48,12 +73,24 @@ const Feed = () => {
         required
         />
       </form>
+      {searchText ? (
       <BlogCardList
-        data={posts}
-        handleTagClick={() => {}}
-      />
+        data={searchedResults}
+      />) : (
+        <BlogCardList
+        data={posts}/>
+      )}
     </section>
   )
 }
 
 export default Feed
+
+{/* <TextField 
+label="Outlined" 
+variant="outlined"
+type="search text"
+value={searchText}
+onChange={handleSearchChange}
+required
+/> */}
