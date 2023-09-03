@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import BlogCard from '../BlogCard/BlogCard'
 
 import Grid from '@mui/material/Grid'
-import TextField from '@mui/material/TextField'
 import styles from './Feed.module.css'
 
 const BlogCardList = ({ data, handleTagClick }) => {
@@ -54,7 +53,7 @@ const Feed = () => {
   };
 
   const filterPrompts = (searchtext) => {
-    const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    const regex = new RegExp(searchtext, "i"); 
     return posts.filter(
       (item) =>
         regex.test(item.creator.username) ||
@@ -63,24 +62,26 @@ const Feed = () => {
     );
   };
   return (
-    <section>
-      <form>
-        <input
-        type="text"
-        placeholder="Search for a tag or a username"
-        value={searchText}
-        onChange={handleSearchChange}
-        required
-        />
-      </form>
-      {searchText ? (
-      <BlogCardList
-        data={searchedResults}
-      />) : (
+    <div className={styles.container}>
+      <section className={styles.center}>
+        <form>
+          <input
+          type="text"
+          placeholder="Search for a tag or a username"
+          value={searchText}
+          onChange={handleSearchChange}
+          required
+          />
+        </form>
+        {searchText ? (
         <BlogCardList
-        data={posts}/>
-      )}
-    </section>
+          data={searchedResults}
+        />) : (
+          <BlogCardList
+          data={posts}/>
+        )}
+      </section>
+    </div>
   )
 }
 

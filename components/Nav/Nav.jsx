@@ -37,48 +37,60 @@ const Nav = () => {
         />
         <p className={styles.hide_desktop}>K-agency</p>
       </Link>
-      <Link href="/blogs">
-        <p>blogs</p>
-      </Link>
 
+        <div className={styles.right_side}>
+        {/* desktop */}
+        <div className={styles.hide_desktop}>
+          {session?.user ? (
+            <div className={styles.right_side}>
+              <Link href="/create-blog">
+                <p>Create blog</p>
+              </Link>
+              <Link href="/blogs">
+                <p>About us</p>
+              </Link>
+              <Link href="/blogs">
+                <p>blogs</p>
+              </Link>
 
-      {/* desktop */}
-      <div className={styles.hide_desktop}>
-        {session?.user ? (
-          <div>
-            <Link href="/create-blog">
-              Create blog
-            </Link>
-
-            <Button color="success"onClick={signOut} className="outline_btn">
-              Sign Out
-            </Button>
-            <Link href="/profile">
-              <Image 
-                src={session?.user.image}
-                alt="logo"
-                width={30}
-                height={30}
-              />
-            </Link>
-          </div>
-        ):
-        <>
-          {providers &&
-            Object.values(providers).map((provider) => (
-              <Button
-              variant="contained" 
-              color="success"
-                key={provider.name}
-                onClick={() => signIn(provider.id)}
-              >
-                Sing In
+              <Button color="success"onClick={signOut} className="outline_btn">
+                Sign Out
               </Button>
-            )
-            )
+              <Link href="/profile">
+                <Image 
+                  src={session?.user.image}
+                  alt="logo"
+                  width={30}
+                  height={30}
+                />
+              </Link>
+            </div>
+          ):
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+              <div className={styles.right_side}>
+                <Link href="/blogs">
+                  <p>About us</p>
+                </Link>
+                <Link href="/blogs">
+                  <p>blogs</p>
+                </Link>
+                <Button
+                variant="contained" 
+                color="success"
+                  key={provider.name}
+                  onClick={() => signIn(provider.id)}
+                >
+                  Sing In
+                </Button>
+              </div> 
+              )
+              )
+            }
+          </>
           }
-        </>
-        }
+        </div>
       </div>
 
 
@@ -99,17 +111,23 @@ const Nav = () => {
 
                 {Dropdown && (
                   <div>
+                    <Link href="/blogs"
+                      onClick={()=>setDropdown(false)}
+                    >
+                    <p>About us</p>
+                    </Link>
+
                     <Link
                     href="/Profile"
                     onClick={()=>setDropdown(false)}
                     >
-                      My profile
+                      <p>My Profile</p>
                     </Link>
                     <Link
                     href="/create-blog"
                     onClick={()=>setDropdown(false)}
                     >
-                      Create Blog
+                      <p>Create Blog</p>
                     </Link>
                     <button
                       type="button"
@@ -124,7 +142,42 @@ const Nav = () => {
           </div>
         ):
           <>
-          {providers &&
+           <Image 
+                src="/assets/images/menu.png"
+                alt="logo"
+                width={30}
+                height={30}
+                onClick={()=>setDropdown
+                  (
+                    prev => !prev
+                  )}
+                />
+
+                {Dropdown && providers && Object.values(providers).map((provider) => (
+                  <div>
+                    <Link href="/blogs"
+                    onClick={()=>setDropdown(false)}
+                    >
+                     <p>About us</p>
+                    </Link>
+                    <Link
+                    href="/create-blog"
+                    onClick={()=>setDropdown(false)}
+                    >
+                      <p>Create Blog</p>
+                    </Link>
+                    <button
+                      type="button"
+                      key={provider.name}
+                      onClick={()=>{setDropdown(false)
+                      signIn(provider.id);
+                    }}
+                    >
+                      Sign In
+                    </button>
+                  </div>
+                ))}  
+         {/*  {providers &&
             Object.values(providers).map((provider) => (
               <button
                 type="button"
@@ -135,7 +188,7 @@ const Nav = () => {
               </button>
             )
             )
-        }
+        } */}
       </>
       }
       </div>

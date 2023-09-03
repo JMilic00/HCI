@@ -4,3 +4,19 @@
     justify-content: center;
     padding-top: 20px;
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 5rem;
+}
+
+.center {
+    width: 75%; 
+
+    background-color: WHITE;
+    padding: 20px;
+   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

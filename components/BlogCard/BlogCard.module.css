@@ -2,4 +2,14 @@
     display: flex;
     align-items:center;
     justify-content: space-between;
+    padding-left: 0.5rem;
+    padding-right: 2rem;
+}
+.person{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.userInfo{
+    margin-bottom: 10px;
 }

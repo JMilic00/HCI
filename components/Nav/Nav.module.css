@@ -11,7 +11,9 @@
 .link{
     display: flex;
 }
-
+.right_side{
+    display: flex;
+}
 @media( max-width: 680px){
     .hide_desktop{
         display: none;

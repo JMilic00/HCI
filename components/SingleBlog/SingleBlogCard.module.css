@@ -1,0 +1,18 @@
+.body{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.flex{
+    width: 70%; /* Adjust this value as needed */
+    /* You can also set max-width to limit the width of the div */
+    max-width: 900px; /* Adjust this value as needed */
+    /* Add other styling as needed */
+    background-color: WHITE;
+    padding: 20px;
+    /* Example box shadow for a slight elevation effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
