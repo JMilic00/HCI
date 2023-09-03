@@ -3,7 +3,8 @@ import styles from './Form.module.css'
 
 const Form = ({type,post,setPost,submitting,handleSubmit}) => {
   return (
-    <section>
+  <div className={styles.container}>
+    <section className={styles.centered_div}>
       <h1>
         <span>{type} post</span>
       </h1>
@@ -36,7 +37,7 @@ const Form = ({type,post,setPost,submitting,handleSubmit}) => {
             value={post.tag}
             onChange={(e) => setPost({...post,
             tag: e.target.value})}
-            placeholder="Write your #tag here..."
+            placeholder="Write your title ..."
             required
           />
         </lable>
@@ -55,6 +56,7 @@ const Form = ({type,post,setPost,submitting,handleSubmit}) => {
         </div>
       </form>
     </section>
+  </div>
   )
 }
 
