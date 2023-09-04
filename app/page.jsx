@@ -3,12 +3,20 @@ import Feed from '@components/Feed/Feed'
 const Home = () => {
   return (
     <section>
-          <span> discover & Turist Blog Heaven</span>
-        <p>
-          asdfasfdedfjadfjlasd;jfkl;ajvlkajnhdf
-          ajdkhfjkasdhjfklajfkljdsjf;asdjfl;asdfasfdedfjadfjlasdadf
-          adshflk;ajdsfkl'jafas;djf;klasdjf;a
-        </p>
+      <div className='overlayStyle'>
+        <img 
+        src="\assets\images\trogir.jpg"
+        alt="user_image"
+        className='images'
+        width={"100%"}
+        />
+        <div>
+          <p className='textStyle'>
+            Share your experience
+              of Croatia 
+          </p>
+        </div>
+      </div>
         <Feed />
     </section>
   )

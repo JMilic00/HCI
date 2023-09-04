@@ -34,7 +34,7 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
   };
 
   return (
-    <Grid padding={3} item xs={12} sm={6} md={4} lg={3} className={styles.grid_item}>
+    <Grid padding={3} item xs={12} sm={6} md={5} lg={4} className={styles.grid_item}>
       <Card>
       <div>
         <div className={styles.header}>
@@ -54,8 +54,9 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
                     </div>
                 </div>
               </div>
-            <div onClick={handleCopy}>
-              <Image
+              {session?.user.id === post.creator._id && pathName === '/profile' && 
+              (<div onClick={handleCopy}>
+                <Image
                 src={copied === post.blog
                   ? '/assets/images/tick.png'
                   : '/assets/images/copy.png'
@@ -64,6 +65,7 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
                 height={20}
               />
             </div>
+            )}
         </div>
       </div>
      <Link href={{

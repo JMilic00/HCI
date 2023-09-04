@@ -16,9 +16,22 @@ const Form = ({type,post,setPost,submitting,handleSubmit}) => {
         onSubmit={handleSubmit}
       >
         <lable>
-          <span>
-            Your blog
-          </span>
+          <lable>
+            <span>
+              Title: {` `}
+            </span>
+            <input
+              value={post.tag}
+              onChange={(e) => setPost({...post,
+              tag: e.target.value})}
+              placeholder="Write your title ..."
+              required
+              className={styles.title}
+            />
+          </lable>
+          <div>
+            Your blog:
+          </div>
           <textarea
             value={post.blog}
             onChange={(e) => setPost({...post,
@@ -28,28 +41,16 @@ const Form = ({type,post,setPost,submitting,handleSubmit}) => {
             className={styles.text_area}
           />
         </lable>
-        <lable>
-          <span>
-            Tag {` `}
-            <span>(#dalmatia,#Trogir,#Karlobag)</span>
-          </span>
-          <input
-            value={post.tag}
-            onChange={(e) => setPost({...post,
-            tag: e.target.value})}
-            placeholder="Write your title ..."
-            required
-          />
-        </lable>
 
-        <div>
-          <Link href="/">
+        <div className={styles.buttons}>
+          <Link href="/" className={styles.cancle}>
               Cancel
           </Link>
 
           <button
             type="submit"
             disabled={submitting}
+            className={styles.submit}
           >
             {submitting ? `${type}...` : type}
           </button>
