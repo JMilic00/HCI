@@ -1,0 +1,13 @@
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #263BA4;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.image{
+    border-radius: 2rem;
+    margin-right: 40px;
+}

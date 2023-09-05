@@ -8,7 +8,6 @@ import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import styles from './BlogCard.module.css'
 import Link from 'next/link';
-import { grey } from '@mui/material/colors';
 
 
 const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
@@ -18,6 +17,7 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
   const router = useRouter();
 
   const [copied, setCopied] = useState("");
+  const [visibleCount, setVisibleCount] = useState(9);
 
   const handleCopy = () => {
     setCopied(post.blog)
@@ -33,9 +33,14 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
     router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
   };
 
+  const handleSeeMore = () => {
+    setVisibleCount((prevCount) => prevCount + 3);
+  };
+
+
   return (
-    <Grid padding={3} item xs={12} sm={6} md={5} lg={4} className={styles.grid_item}>
-      <Card>
+    <Grid padding={3} item xs={12} sm={6} md={6} lg={4} className={styles.grid_item}>
+      <Card className={styles.color}>
       <div>
         <div className={styles.header}>
             <div
@@ -45,8 +50,9 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
                   <Image
                     src={post.creator.image}
                     alt="user_image"
-                    width={40}
-                    height={40}
+                    width={50}
+                    height={50}
+                    className={styles.image}
                   />
                     <div className={styles.userInfo}>
                       <h2 style={{ fontFamily: 'Arial, sans-serif' }}>{post.creator.username}</h2>
@@ -68,32 +74,45 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
             )}
         </div>
       </div>
-     <Link href={{
-        pathname: "/blog",
-        query: {
-          paragraph: post.blog,
-          title: post.tag, 
-        },
-      }}
-      >
-      <h1 onClick={() => handleTagClick && handleTagClick(post.tag)}>
-        {post.tag}
-      </h1> 
-      <p className={styles.paragraph}>{post.blog}</p>
-      </Link> 
 
-      {session?.user.id === post.creator._id && pathName === '/profile'
-       &&(
-        <div>
-          <p onClick={handleEdit}>
-            Edit
-          </p>
-          <p onClick={handleDelete}>
-            Delete
-        </p>
-        </div>
+      <h2 onClick={() => handleTagClick && handleTagClick(post.tag)} className={styles.title}>
+        {post.tag}
+      </h2> 
+      <p className={styles.paragraph}>{post.blog}</p>
+      
+      <div className={styles.buttons}>
+        <Link href={{
+          pathname: "/blog",
+          query: {
+            paragraph: post.blog,
+            title: post.tag, 
+          },
+        }}>
+          <button className={styles.submit}>
+                Read more
+          </button>
+          </Link>
+          {session?.user.id === post.creator._id && pathName === '/profile'
+            &&(
+            <div className={styles.Edit_delete}>
+                <button onClick={handleEdit} className={styles.submit}>
+                  Edit
+                </button>
+                <button onClick={handleDelete} className={styles.delete}>
+                  Delete
+                </button>
+            </div>
        )}
+          <p  className={styles.date}>
+            2/August/2023
+          </p>
+      </div>
        </Card>
+       {visibleCount < post.length && (
+        <div className={styles.seeMoreButton}>
+          <button onClick={handleSeeMore}>See More</button>
+        </div>
+      )}
     </Grid>
   )
 }

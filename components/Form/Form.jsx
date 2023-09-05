@@ -5,10 +5,10 @@ const Form = ({type,post,setPost,submitting,handleSubmit}) => {
   return (
   <div className={styles.container}>
     <section className={styles.centered_div}>
-      <h1>
+      <h1 className={styles.create}>
         <span>{type} post</span>
       </h1>
-      <p>
+      <p className={styles.paragraph}>
         {type} and share your tourist experience 
       </p>
 
@@ -17,7 +17,7 @@ const Form = ({type,post,setPost,submitting,handleSubmit}) => {
       >
         <lable>
           <lable>
-            <span>
+            <span className={styles.paragraph}>
               Title: {` `}
             </span>
             <input
@@ -29,7 +29,7 @@ const Form = ({type,post,setPost,submitting,handleSubmit}) => {
               className={styles.title}
             />
           </lable>
-          <div>
+          <div className={styles.paragraph}>
             Your blog:
           </div>
           <textarea

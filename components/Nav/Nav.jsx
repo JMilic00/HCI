@@ -32,12 +32,13 @@ const Nav = () => {
     <nav className={styles.flex_nav}>
       <Link href="/" className={styles.link}>
         <Image 
-        src="/assets/images/K.svg.png"
+        src="/assets/images/K.jpg"
         alt="logo"
-        width={30}
-        height={30}
+        width={50}
+        height={50}
+        className={`${styles.image}`}
         />
-        <p className={styles.hide_desktop}>K-agency</p>
+        <p className={`${styles.home} ${styles.hide_desktop}`}>K-agency</p>
       </Link>  
         <div className={styles.right_side}>
         {/* desktop */}
@@ -45,24 +46,24 @@ const Nav = () => {
           {session?.user ? (
             <div className={styles.right_side}>
               <Link href="/blogs" className={`${styles.right_side_item} ${router === '/blogs' ? styles.selected :''}`}>
-                <p>blogs</p>
+                <p className={styles.text_nav}>blogs</p>
               </Link>
               <Link href="/create-blog" className={`${styles.right_side_item} ${router === '/create-blog' ? styles.selected :''}`}>
-                <p>Create blog</p>
+                <p className={styles.text_nav}>Create blog</p>
               </Link>
-              <Link href="/blogs" className={`${styles.right_side_item} ${router === '/about us' ? styles.selected :''}`}>
-                <p>About us</p>
+              <Link href="/AboutUs" className={`${styles.right_side_item} ${router === '/AboutUs' ? styles.selected :''}`}>
+                <p className={styles.text_nav}>About us</p>
               </Link>
 
-              <button color="success" onClick={signOut} className={styles.right_side_item}>
+              <button onClick={signOut} className={`${styles.button}`}>
                 Sign Out
               </button>
               <Link href="/profile" className={`${styles.link}`}>
                 <Image 
                   src={session?.user.image}
                   alt="logo"
-                  width={30}
-                  height={30}
+                  width={50}
+                  height={50}
                   className={`${styles.image}`}
                 />
               </Link>
@@ -72,18 +73,16 @@ const Nav = () => {
             {providers &&
               Object.values(providers).map((provider) => (
               <div className={styles.right_side}>
-                <Link href="/blogs" className={`${styles.right_side_item} ${router === '/blogs' ? styles.selected :''}`}>
-                  <p>About us</p>
+                <Link href="/AboutUs" className={`${styles.right_side_item} ${router === '/AboutUs' ? styles.selected :''}`}>
+                  <p className={styles.text_nav}>About us</p>
                 </Link>
                 <Link href="/blogs" className={`${styles.right_side_item} ${router === '/blogs' ? styles.selected :''}`}>
-                  <p>blogs</p>
+                  <p className={styles.text_nav}>blogs</p>
                 </Link>
                 <button
-                  variant="contained" 
-                  color="success"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className={`${styles.right_side_item} ${router === '' ? styles.selected :''}`}
+                  className={styles.button}
                 >
                   Sing In
                 </button>
@@ -104,8 +103,8 @@ const Nav = () => {
               <Image 
                 src={session?.user.image}
                 alt="logo"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 onClick={()=>setDropdown
                   (
                     prev => !prev
@@ -114,30 +113,30 @@ const Nav = () => {
                 />
 
                 {Dropdown && (
-                  <div className={styles.right_side}>
+                  <div className={styles.Dropdown}>
                     <Link href="/blogs"
                       onClick={()=>setDropdown(false)}
-                      className={`${styles.right_side_item} ${router === '/blogs' ? styles.selected :''}`}
+                      className={`${styles.dropdown_link}${router === '/blogs' ? styles.selected :''}`}
                     >
-                    <p>About us</p>
+                    <p className={styles.text_nav}>About us</p>
                     </Link>
 
                     <Link
                     href="/profile"
                     onClick={()=>setDropdown(false)}
-                    className={`${styles.right_side_item} ${router === '/profile' ? styles.selected :''}`}
+                    className={`${styles.dropdown_link}${router === '/profile' ? styles.selected :''}`}
                     >
-                      <p>My Profile</p>
+                      <p className={styles.text_nav}>My Profile</p>
                     </Link>
                     <Link
                     href="/create-blog"
                     onClick={()=>setDropdown(false)}
-                    className={`${styles.right_side_item} ${router === '/create-blog' ? styles.selected :''}`}
+                    className={`${styles.dropdown_link}${router === '/create-blog' ? styles.selected :''}`}
                     >
-                      <p>Create Blog</p>
+                      <p className={styles.text_nav}>Create Blog</p>
                     </Link>
                     <button
-                      className={`${styles.right_side_item} ${router === '' ? styles.selected :''}`}
+                      className={`${styles.dropdown_link}${styles.image}`}
                       type="button"
                       onClick={()=>{setDropdown(false)
                       signOut();
@@ -150,7 +149,7 @@ const Nav = () => {
           </div>
         ):
           <div>
-           <Image 
+                <Image 
                 src="/assets/images/menu.png"
                 alt="logo"
                 width={30}
@@ -168,7 +167,7 @@ const Nav = () => {
                     onClick={()=>setDropdown(false)}
                     className={`${styles.right_side_item} ${router === '/blogs' ? styles.selected :''}`}
                     >
-                     <p>About us</p>
+                     <p className={styles.text_nav}>About us</p>
                     </Link>
                     <button
                       type="button"
@@ -176,7 +175,7 @@ const Nav = () => {
                       onClick={()=>{setDropdown(false)
                       signIn(provider.id);
                     }}
-                      className={`${styles.right_side_item} ${router === '' ? styles.selected :''}`}
+                      className={styles.image}
                     >
                       Sign In
                     </button>

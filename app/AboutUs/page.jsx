@@ -1,28 +1,20 @@
-import Feed from '@components/Feed/Feed'
+import React from 'react'
 
-const Home = () => {
+const page = () => {
   return (
-    <section>
-      <div className='overlayStyle'>
-        <img 
-        src="\assets\images\trogir.jpg"
-        alt="user_image"
-        className='images'
-        width={"100%"}
-        />
-        <div>
-          <p className='textStyle'>
-            Share your experience
-              of Croatia 
-          </p>
-        </div>
-      </div>
-      <div className='center_Aboutus'>
+    <div className='center_Aboutus'>
         <div className='center_the_div' >
           <h1  style={{ fontFamily: 'Arial, sans-serif', fontSize: '40px' }}>WHO WE ARE</h1>
           <p style={{fontFamily: 'Arial, sans-serif', fontSize: '22px' }}>
 
-          
+          Are you yearning for exciting escapades, unforgettable journeys, 
+          and remarkable discoveries? Look no further than K-agency, 
+          your trusted partner in unlocking the world's most captivating destinations of Croatia.
+          As a leading tourist blog company, 
+          we are dedicated to curating immersive travel experiences 
+          and sharing them with wanderlust-driven explorers like you. 
+          Join us on a voyage through the heart of AdventureSeeker and discover how 
+          we can help you embark on the adventure of a lifetime.
 
           </p>
           <h1  style={{ fontFamily: 'Arial, sans-serif', fontSize: '40px' }}>WE ARE DIFFERENT THAN THE REST</h1>
@@ -41,8 +33,7 @@ const Home = () => {
          </div>
         </div>
       </div>
-    </section>
   )
 }
 
-export default Home
+export default page

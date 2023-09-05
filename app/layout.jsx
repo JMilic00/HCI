@@ -3,6 +3,7 @@ import '@styles/globals.css'
 
 import Nav from '@components/Nav/Nav'
 import Provider from '@components/Provider/Provider'
+import Footer from '@components/Footer/Footer'
 
 export const metadata = {
     title: "k-agency",
@@ -22,6 +23,7 @@ const Root = ({children}) => {
             <main className="app">
                 {children}
             </main>
+            <Footer />
             </Provider>
         </body>
     </html>   

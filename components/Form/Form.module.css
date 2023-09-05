@@ -27,7 +27,7 @@
 }
 
 .title{
-    width: 100%;
+    width: 98%;
     display: flex;
     border-radius: 0.5rem;
     margin-top: 0.5rem;
@@ -44,6 +44,7 @@
     margin-left: 0.75rem;
     margin-right: 0.75rem;
     margin-bottom: 1.25rem;
+    margin-top: 2rem;
     gap: 1rem;
 }
 
@@ -62,4 +63,18 @@
     background-color: #ff7b00;
     border-radius: 9999px;
     color: #ffffff;
+}
+
+
+.create{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:  30px;
+    cursor: default;
+}
+
+.paragraph{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:  20px;
+    cursor: default;
+    padding-top: 5px;
 }

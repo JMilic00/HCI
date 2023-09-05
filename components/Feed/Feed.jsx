@@ -7,10 +7,11 @@ import BlogCard from '../BlogCard/BlogCard'
 import Grid from '@mui/material/Grid'
 import styles from './Feed.module.css'
 
-const BlogCardList = ({ data, handleTagClick }) => {
+const BlogCardList = ({ data, handleTagClick, visibleCount, loadMore}) => {
   return (
+  <div>
     <Grid container sx={styles.grid_layout}>
-      {data.map((post) => (
+    {data.slice(0, visibleCount).map((post) => ( 
         <BlogCard
           key={post._id}
           post={post}
@@ -18,6 +19,12 @@ const BlogCardList = ({ data, handleTagClick }) => {
         />
       ))}
     </Grid>
+    {visibleCount < data.length && (
+      <div className={styles.seeMoreButton}>
+        <button onClick={loadMore} className={styles.TheButton}>See More</button>
+      </div>
+    )}
+  </div>
   )
 }
 
@@ -26,6 +33,7 @@ const Feed = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
+  const [visibleCount, setVisibleCount] = useState(9);
   const [posts, setPosts] = useState([]);
 
   useEffect(()=>{
@@ -61,24 +69,35 @@ const Feed = () => {
         regex.test(item.blog)
     );
   };
+
+  const loadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 3);
+  }
+
   return (
     <div className={styles.container}>
       <section className={styles.center}>
         <form>
           <input
           type="text"
-          placeholder="Search for a tag or a username"
+          placeholder="Search for a title or a username"
           value={searchText}
           onChange={handleSearchChange}
           required
+          className={styles.title}
           />
         </form>
         {searchText ? (
         <BlogCardList
           data={searchedResults}
+          visibleCount={visibleCount}
+            oadMore={loadMore}
         />) : (
           <BlogCardList
-          data={posts}/>
+          data={posts}
+          visibleCount={visibleCount} 
+          loadMore={loadMore}
+          />
         )}
       </section>
     </div>

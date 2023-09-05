@@ -14,6 +14,7 @@
   justify-content: center;
   align-items: center;
   background-color: #F0F0F0;
+  min-height: 100vh;
 }
 
 body{
@@ -33,12 +34,13 @@ body{
     top: 20%;
     left: 30%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #F4F4F4;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 1ch;
     background-color: gba(0, 244, 233, 0.0);
     padding: 10px 20px;
+    text-shadow: 2px 2px 4px #000000;
   };
 }
 
@@ -48,12 +50,13 @@ body{
     top: 20%;
     left: 30%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #f4f4f4;
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 1ch;
     background-color: gba(0, 244, 233, 0.0);
     padding: 10px 20px;
+    text-shadow: 2px 2px 4px  #000000;
   };
 }
 
@@ -63,12 +66,13 @@ body{
     top: 20%;
     left: 30%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #F4F4F4;
     font-size: 60px;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 1ch;
     background-color: gba(0, 244, 233, 0.0);
     padding: 10px 20px;
+    text-shadow:2px 2px 4px  #000000;
   };
 }
 
@@ -79,3 +83,38 @@ body{
   height:auto;
 }
 
+.center_Aboutus{
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.center_the_div{
+  width: 70%;
+    max-width: 900px;
+    background-color: WHITE;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.button_about_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_about{
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 0.875rem;
+  background-color: #ff7b00;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}

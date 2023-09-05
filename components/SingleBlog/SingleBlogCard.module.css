@@ -7,12 +7,9 @@
 }
 
 .flex{
-    width: 70%; /* Adjust this value as needed */
-    /* You can also set max-width to limit the width of the div */
-    max-width: 900px; /* Adjust this value as needed */
-    /* Add other styling as needed */
+    width: 70%;
+    max-width: 900px;
     background-color: WHITE;
     padding: 20px;
-    /* Example box shadow for a slight elevation effect */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
