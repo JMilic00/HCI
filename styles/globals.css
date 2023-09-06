@@ -27,6 +27,18 @@ body{
   width: 100%;
 }
 
+@media( max-width: 1280px){
+  .textStyle{
+    display: none;
+  }
+}
+@media( max-width: 1280px){
+  .textStyleSplit{
+    display: none;
+  }
+}
+
+
 @media( min-width: 1280px){
   .textStyle{
     position: absolute;
