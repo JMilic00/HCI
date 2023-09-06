@@ -4,11 +4,11 @@ const Home = () => {
   return (
     <section>
       <div className='overlayStyle'>
-        <img 
+        <img
         src="\assets\images\trogir.jpg"
         alt="user_image"
         className='images'
-        width={"100%"}
+        style={{ width: '100%', Height: 'auto' }}
         />
         <div>
           <p className='textStyle'>
