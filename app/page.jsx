@@ -8,7 +8,7 @@ const Home = () => {
         className='images'
         />
         <div>
-          <p className='textStyle'>
+          <p className="textStyle">
             Share your experience
               of Croatia 
           </p>
@@ -35,7 +35,7 @@ const Home = () => {
                     className="image Split"
                   />
                   <div>
-                    <p className='textStyleSplit'>
+                    <p className="textStyleSplit">
                       View and Write Blogs with ease
                     </p>
                   </div>
