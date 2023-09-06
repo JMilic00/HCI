@@ -5,10 +5,9 @@ const Home = () => {
     <section>
       <div className='overlayStyle'>
         <img
-        src="\assets\images\trogir.jpg"
+        src="/assets/images/trogir.jpg"
         alt="user_image"
         className='images'
-        style={{ width: '100%', Height: 'auto' }}
         />
         <div>
           <p className='textStyle'>
@@ -33,7 +32,7 @@ const Home = () => {
         </div> 
           <div className='overlayStyle'>
                   <img 
-                    src="\assets\images\split3.jpg"
+                    src="/assets/images/split3.jpg"
                     alt="user_image"
                     className="image Split"
                   />
