@@ -5,7 +5,7 @@ const page = () => {
   return (
     <div className='center_Aboutus'>
         <div className='center_the_div' >
-          <h1  style={{ fontFamily: 'Arial, sans-serif', fontSize: '40px' }}>WHO WE ARE</h1>
+          <h1  style={{ fontFamily: 'Arial, sans-serif', fontSize: '40px' }}>WHO ARE WE</h1>
           <p style={{fontFamily: 'Arial, sans-serif', fontSize: '22px' }}>
 
           Are you yearning for exciting escapades, unforgettable journeys, 

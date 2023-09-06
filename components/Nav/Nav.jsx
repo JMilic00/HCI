@@ -194,7 +194,7 @@ const Nav = () => {
         ):
           <div className={styles.right_side}>
                 <Image 
-                src="/assets/images/menu.png"
+                src="/assets/images/menu.svg"
                 alt="logo"
                 width={30}
                 height={30}

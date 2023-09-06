@@ -23,9 +23,8 @@ const Footer = () => {
         <div>
             <h2 className={styles.text}>Additional information</h2>
             <div>
-                <p className={styles.text}>FAQ</p>
-                <p className={styles.text}>Help</p>
-                <p className={styles.text}>Privacy</p>
+                <p className={styles.text}>Contact Us</p>
+                <p className={styles.text}>About Us</p>
             </div>
         </div>
         <div>
