@@ -34,11 +34,6 @@ const Home = () => {
                     alt="user_image"
                     className="image Split"
                   />
-                  <div>
-                    <p className="textStyleSplit">
-                      View and Write Blogs with ease
-                    </p>
-                  </div>
             </div>
       </div>
     </section>
