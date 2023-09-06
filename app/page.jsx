@@ -1,10 +1,9 @@
-
 const Home = () => {
   return (
     <section>
       <div className='overlayStyle'>
         <img
-        src="/assets/images/trogir.jpg"
+        src="/assets/images/Trogir.jpg"
         alt="user_image"
         className='images'
         />
@@ -31,7 +30,7 @@ const Home = () => {
         </div> 
           <div className='overlayStyle'>
                   <img 
-                    src="/assets/images/split3.jpg"
+                    src="/assets/images/Split3.jpg"
                     alt="user_image"
                     className="image Split"
                   />
