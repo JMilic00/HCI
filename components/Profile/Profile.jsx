@@ -3,7 +3,7 @@ import styles from './Profile.module.css'
 import Grid from '@mui/material/Grid'
 import { useState } from 'react'
 
-const Profile = ( {name, desc, data, handleEdit, handleDelete } ) => {
+const Profile = ( {name, data, handleEdit, handleDelete } ) => {
 
   const [visibleCount, setVisibleCount] = useState(9);
 
@@ -16,7 +16,6 @@ const Profile = ( {name, desc, data, handleEdit, handleDelete } ) => {
     <section  className={styles.center}>
       <div className={styles.header}>
         <h1>{name} Profile</h1>
-        <p>{desc}</p>
       </div>
 
       <Grid container sx={styles.grid_layout}>

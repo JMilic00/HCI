@@ -6,7 +6,7 @@ const SingleBlog = ({ paragraph, title }) => {
     <div className={styles.body}>
         <div className={styles.flex}>
           <img 
-          src="/assets/images/croatia-full-of-life.png"
+          src="/assets/images/Makarska.jpg"
           alt="logo"
           style={{ maxWidth: '100%', height: 'auto' }}
           >

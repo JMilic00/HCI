@@ -17,29 +17,32 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className='center_Aboutus'>
+      <div className='center_home'>
         <div className='center_the_div' >
-          <h1  style={{ fontFamily: 'Arial, sans-serif', fontSize: '40px' }}>WHO WE ARE</h1>
-          <p style={{fontFamily: 'Arial, sans-serif', fontSize: '22px' }}>
-
-          
-
-          </p>
-          <h1  style={{ fontFamily: 'Arial, sans-serif', fontSize: '40px' }}>WE ARE DIFFERENT THAN THE REST</h1>
+          <h1  style={{ fontFamily: 'Arial, sans-serif', fontSize: '40px' }}>Welcome to K-agency</h1>
           <p style={{ fontFamily: 'Arial, sans-serif',fontSize: '22px' }}> 
-           In a world brimming with choices, 
-           finding the right option can be overwhelming.
-           When it comes to your travel needs,
-           we believe that selecting the best partner is 
-           crucial for an unforgettable experience. 
-           So, why should you choose us over the rest? 
-           Let's delve into the reasons that set us apart
-           and make us your superior choice.
+            The place to explore Croatia and it's beauty.
+            Find inspiration from our users and new places to visit
           </p>
-          <div className="button_about_div">
-            <button className="button_about">Contact us</button>
-         </div>
-        </div>
+          <p style={{ fontFamily: 'Arial, sans-serif',fontSize: '22px' }}>
+            Share your experience of Croatian natural beauty.
+            Discove Curtular Connection, Hidden Gems of nature, Interactive
+            Community and much more. Join now and enjoy
+          </p>
+            <h1  style={{ fontFamily: 'Arial, sans-serif', fontSize: '40px', Color:"#ff7b00" }}>Join now and enjoy</h1>
+        </div> 
+          <div className='overlayStyle'>
+                  <img 
+                    src="\assets\images\split3.jpg"
+                    alt="user_image"
+                    className="image Split"
+                  />
+                  <div>
+                    <p className='textStyleSplit'>
+                      View and Write Blogs with ease
+                    </p>
+                  </div>
+            </div>
       </div>
     </section>
   )

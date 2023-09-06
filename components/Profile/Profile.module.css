@@ -17,7 +17,10 @@
 }
 
 .header{
-
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:  30px;
+    cursor: default;
+    margin-left: 2rem;
 }
 
 .button_position{

@@ -1,0 +1,80 @@
+.text_area{
+    width: 100%;
+    display: flex;
+    border-radius: 0.5rem;
+    height: 200px;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    color: #718096;
+    outline: none;
+    resize: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.centered_div {
+    width: 50%;  
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title{
+    width: 98%;
+    display: flex;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    color: #718096;
+    outline: none;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    margin-bottom: 1.25rem;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.cancle{
+    color: #718096;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.submit{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    font-size: 0.875rem;
+    background-color: #ff7b00;
+    border-radius: 9999px;
+    color: #ffffff;
+}
+
+
+.create{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:  30px;
+    cursor: default;
+}
+
+.paragraph{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:  20px;
+    cursor: default;
+    padding-top: 5px;
+}

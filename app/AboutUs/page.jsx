@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const page = () => {
   return (
@@ -13,6 +14,10 @@ const page = () => {
           As a leading tourist blog company, 
           we are dedicated to curating immersive travel experiences 
           and sharing them with wanderlust-driven explorers like you. 
+
+          </p>
+          <p style={{fontFamily: 'Arial, sans-serif', fontSize: '22px' }}>
+
           Join us on a voyage through the heart of AdventureSeeker and discover how 
           we can help you embark on the adventure of a lifetime.
 
@@ -21,15 +26,19 @@ const page = () => {
           <p style={{ fontFamily: 'Arial, sans-serif',fontSize: '22px' }}> 
            In a world brimming with choices, 
            finding the right option can be overwhelming.
-           When it comes to your travel needs,
-           we believe that selecting the best partner is 
+           When it comes to your travel needs.
+          </p>
+          <p style={{fontFamily: 'Arial, sans-serif', fontSize: '22px' }}>
+          We believe that selecting the best partner is 
            crucial for an unforgettable experience. 
            So, why should you choose us over the rest? 
            Let's delve into the reasons that set us apart
            and make us your superior choice.
           </p>
           <div className="button_about_div">
-            <button className="button_about">Contact us</button>
+            <Link href="/ContactUs">
+              <button className="button_about">Contact us</button>
+            </Link>
          </div>
         </div>
       </div>

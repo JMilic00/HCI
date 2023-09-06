@@ -64,11 +64,12 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
               (<div onClick={handleCopy}>
                 <Image
                 src={copied === post.blog
-                  ? '/assets/images/tick.png'
+                  ? '/assets/images/Tick.jpg'
                   : '/assets/images/copy.png'
                 }
                 width={20}
                 height={20}
+                className={styles.tick}
               />
             </div>
             )}
@@ -92,21 +93,19 @@ const BlogCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
                 Read more
           </button>
           </Link>
-          {session?.user.id === post.creator._id && pathName === '/profile'
-            &&(
-            <div className={styles.Edit_delete}>
-                <button onClick={handleEdit} className={styles.submit}>
-                  Edit
-                </button>
-                <button onClick={handleDelete} className={styles.delete}>
-                  Delete
-                </button>
-            </div>
-       )}
           <p  className={styles.date}>
             2/August/2023
           </p>
       </div>
+      {session?.user.id === post.creator._id && pathName === '/profile'
+            &&(
+            <div className={styles.Edit_delete}>
+
+                <p onClick={handleEdit} className={styles.Edit}>Edit</p> 
+              
+                <p onClick={handleDelete} className={styles.Delete}>Delete</p>
+            </div>
+       )}
        </Card>
        {visibleCount < post.length && (
         <div className={styles.seeMoreButton}>

@@ -13,40 +13,40 @@ const Footer = () => {
         className={styles.image}
         />
         <div>
-            <h2>Costumer Support</h2>
+            <h2 className={styles.text}>Costumer Support</h2>
             <div>
-                <p>FAQ</p>
-                <p>Help</p>
-                <p>Privacy</p>
+                <p className={styles.text}>FAQ</p>
+                <p className={styles.text}>Help</p>
+                <p className={styles.text}>Privacy</p>
             </div>
         </div>
         <div>
-            <h2>Costumer Support</h2>
+            <h2 className={styles.text}>Additional information</h2>
             <div>
-                <p>FAQ</p>
-                <p>Help</p>
-                <p>Privacy</p>
+                <p className={styles.text}>FAQ</p>
+                <p className={styles.text}>Help</p>
+                <p className={styles.text}>Privacy</p>
             </div>
         </div>
         <div>
-            <h2>Costumer Support</h2>
+            <h2 className={styles.text}>Social media</h2>
             <div>
             <Image 
-            src="/assets/images/K.jpg"
+            src="/assets/images/instagram.svg"
             alt="logo"
             width={30}
             height={30}
             className={styles.image}
             />
              <Image 
-            src="/assets/images/K.jpg"
+            src="/assets/images/facebook.svg"
             alt="logo"
             width={30}
             height={30}
             className={styles.image}
             />
              <Image 
-            src="/assets/images/K.jpg"
+            src="/assets/images/twitter.svg"
             alt="logo"
             width={30}
             height={30}
